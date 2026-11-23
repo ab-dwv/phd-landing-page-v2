@@ -5,7 +5,7 @@ import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 
 const root = fileURLToPath(new URL('.', import.meta.url));
-const types = { '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.webp': 'image/webp', '.png': 'image/png', '.jpg': 'image/jpeg', '.svg': 'image/svg+xml', '.ico': 'image/x-icon' };
+const types = { '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.webp': 'image/webp', '.png': 'image/png', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.svg': 'image/svg+xml', '.ico': 'image/x-icon' };
 const allowedFiles = new Set(['index.html', 'styles.css', 'catalogue.js', 'script.js']);
 
 export function createPreviewServer() {
@@ -16,7 +16,7 @@ export function createPreviewServer() {
       const pathname = decodeURIComponent(new URL(req.url, 'http://localhost').pathname);
       const relative = pathname === '/' ? 'index.html' : pathname.slice(1);
       const target = path.resolve(root, relative);
-      const isAsset = relative.startsWith('assets/') && !relative.includes('..') && !relative.includes('\\');
+      const isAsset = (relative.startsWith('assets/') || relative.startsWith('logos1-assets/')) && !relative.includes('..') && !relative.includes('\\');
       if ((!allowedFiles.has(relative) && !isAsset) || !target.startsWith(root) || !types[path.extname(target)]) { res.writeHead(404, headers); res.end('Not found'); return; }
       const info = await stat(target);
       if (!info.isFile()) throw new Error('Not a file');

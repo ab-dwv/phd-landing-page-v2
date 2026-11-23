@@ -18,7 +18,8 @@ The redesign uses Sharda's own published material. An older January 2026 “appl
 | Official downloadable brochures and fee booklets | https://www.sharda.ac.in/connect/brochure |
 | University brochure PDF, 89,615,558 bytes (approximately 85MiB) | https://www.sharda.ac.in/attachments/downloadcenter_files/CTB_2026-27.pdf |
 | University privacy policy | https://www.sharda.ac.in/privacy-policy |
-| Existing awards background, locally stored | https://unsplash.com/photos/yellow-and-white-bokeh-lights--DwmdT2NRB4 |
+| Global Tie-Ups background (Earth at night) | [NASA Earth Observatory image by Robert Simmon, using Suomi NPP VIIRS data from NOAA](https://science.nasa.gov/earth/earth-observatory/night-lights-2012-the-black-marble-79803/) |
+| Awards & Achievements background | [Standing Man Figurine, Engin Akyurt / Pexels](https://www.pexels.com/photo/standing-man-figurine-2098604/) |
 
 ## Choices made for accuracy
 

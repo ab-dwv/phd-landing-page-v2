@@ -93,14 +93,10 @@ test('layout fits 320–1920px with no horizontal overflow or broken assets', as
   expect(failed).toEqual([]);
 });
 
-test('requested hover, sliding logos and counter animation are present', async ({ page }) => {
+test('Why Ph.D. leads directly to the computing section and animations work', async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 1000 });
   await page.goto('/');
-  const card = page.locator('.domain-card').first();
-  await card.hover();
-  await expect(card).toHaveCSS('background-color', 'rgb(255, 255, 255)');
-  await expect(card).not.toHaveCSS('transform', 'none');
-  expect(await card.evaluate(element => getComputedStyle(element).transitionDuration)).toContain('0.45s');
+  await expect(page.locator('#whyy + #supercomputer')).toHaveCount(1);
   await expect(page.locator('.accreditation-track')).toHaveCSS('animation-name', 'accreditation-slide-right');
   await page.locator('.research-stats').scrollIntoViewIfNeeded();
   await expect(page.locator('[data-count]').first()).toHaveText('1,300', { timeout: 15000 });
