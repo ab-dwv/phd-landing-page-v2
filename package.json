@@ -1,0 +1,14 @@
+{
+  "name": "sharda-phd-admissions",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Responsive Sharda Ph.D. website with a direct admissions email enquiry flow",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "start": "node server.mjs",
+    "build": "node scripts/build.cjs",
+    "test": "playwright test",
+    "test:browser": "playwright test"
+  },
+  "devDependencies": { "@playwright/test": "^1.56.0" }
+}

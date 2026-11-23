@@ -61,3 +61,35 @@ function animateResearchStats(strip) {
 }
 
 animateResearchStats(document.querySelector('.research-stats'));
+
+function setupCampusUpdates(section) {
+  if (!section) return;
+
+  const pairs = section.querySelectorAll('.updates-pair');
+  const previous = section.querySelector('.updates-previous');
+  const next = section.querySelector('.updates-next');
+  let current = 0;
+
+  function showPair(index) {
+    if (index < 0 || index >= pairs.length) return;
+
+    pairs.forEach((pair, position) => { pair.hidden = position !== index; });
+    current = index;
+    previous.setAttribute('aria-disabled', String(index === 0));
+    next.setAttribute('aria-disabled', String(index === pairs.length - 1));
+  }
+
+  previous.addEventListener('click', () => showPair(current - 1));
+  next.addEventListener('click', () => showPair(current + 1));
+  section.addEventListener('keydown', (event) => {
+    if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
+    event.preventDefault();
+    showPair(current + (event.key === 'ArrowLeft' ? -1 : 1));
+  });
+
+  showPair(0);
+  previous.hidden = false;
+  next.hidden = false;
+}
+
+setupCampusUpdates(document.querySelector('.campus-updates'));
