@@ -12,7 +12,7 @@ The research statistics strip counts from zero to its displayed totals over 2.5 
 
 The Important Notification section reproduces the July 2026 entrance-test table, both admissions paragraphs, and contact details from the user's screenshot, with the supplied campus photograph. Its colors, typography, and rounded edges match the hero. The header's Important Dates link opens this local section.
 
-The Welcome to Sharda University section follows the notification. It uses the supplied graduation photograph, university introduction, seven institutional statistics, and the university's slogan from the user's reference. Its right-hand column uses compact outlined cards with pastel icon circles, navy figures, and small gold accents, following the user's card reference.
+The Welcome to Sharda University section follows the notification. It uses the supplied graduation photograph, university introduction, seven institutional statistics, and the university's slogan from the user's reference. Its right-hand column uses a compact navy grid with a staggered entrance and hover highlights.
 
 The supercomputing section pairs the full facility graphic with six research opportunities in a compact card grid and expandable facility details.
 

@@ -126,14 +126,16 @@ function animateResearchStats(strip) {
 
 animateResearchStats(document.querySelector('.research-stats'));
 
-const computeSection = document.querySelector('.compute-section');
-if (computeSection) {
-  const observer = new IntersectionObserver(([entry]) => {
-    if (!entry.isIntersecting) return;
-    computeSection.classList.add('is-in-view');
-    observer.disconnect();
+const animatedSections = document.querySelectorAll('.welcome-facts, .compute-section');
+if (animatedSections.length) {
+  const observer = new IntersectionObserver((entries) => {
+    for (const entry of entries) {
+      if (!entry.isIntersecting) continue;
+      entry.target.classList.add('is-in-view');
+      observer.unobserve(entry.target);
+    }
   }, { threshold: 0.15 });
-  observer.observe(computeSection);
+  animatedSections.forEach((section) => observer.observe(section));
 }
 
 function setupCampusUpdates(section) {
@@ -171,42 +173,67 @@ setupCampusUpdates(document.querySelector('.campus-updates'));
 function setupGlobalPartners(section) {
   if (!section) return;
 
-  const groups = Array.from(section.querySelectorAll('.global-logo-grid'));
-  const pagination = section.querySelector('.global-pages');
-  const status = section.querySelector('[data-global-status]');
-  const buttons = groups.map((group, index) => {
-    Array.from(group.children).forEach((card, position) => {
-      card.style.setProperty('--logo-position', position);
-    });
-    const button = document.createElement('button');
-    button.type = 'button';
-    button.setAttribute('aria-label', `Partner logos, page ${index + 1} of ${groups.length}`);
-    button.setAttribute('aria-controls', 'global-logos');
-    button.addEventListener('click', () => {
-      showPage(index);
-      status.textContent = `Showing partner logos, page ${index + 1} of ${groups.length}.`;
-    });
-    pagination.append(button);
-    return button;
-  });
+  const partners = section.querySelector('.global-partners');
+  const wall = section.querySelector('#global-logos');
+  const control = section.querySelector('.global-motion-control');
+  if (!partners || !wall || !control) return;
 
-  function showPage(index) {
-    groups.forEach((group, position) => {
-      const selected = position === index;
-      group.hidden = !selected;
-      buttons[position].setAttribute('aria-pressed', String(selected));
-    });
+  const groups = Array.from(wall.querySelectorAll('.global-logo-grid'));
+  const cardsByGroup = groups.map(group => Array.from(group.children));
+  const cards = cardsByGroup.flat();
+  if (cards.length < 2) return;
+
+  function makeLane(rowCards) {
+    const lane = document.createElement('div');
+    lane.className = 'global-lane';
+    const track = document.createElement('div');
+    track.className = 'global-track';
+    const list = groups[0].cloneNode(false);
+    list.append(...rowCards);
+
+    // Two identical lists make the halfway point of the track a seamless loop.
+    const repeat = list.cloneNode(true);
+    repeat.setAttribute('aria-hidden', 'true');
+    repeat.inert = true;
+    track.append(list, repeat);
+    lane.append(track);
+    return lane;
   }
 
-  showPage(0);
-  pagination.hidden = false;
+  const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  function applyMotionPreference() {
+    control.hidden = motion.matches;
+    if (motion.matches) {
+      if (partners.dataset.globalMotion !== 'ready') return;
+      delete partners.dataset.globalMotion;
+      groups.forEach((group, index) => group.replaceChildren(...cardsByGroup[index]));
+      wall.replaceChildren(...groups);
+      return;
+    }
+    const split = Math.ceil(cards.length / 2);
+    wall.replaceChildren(makeLane(cards.slice(0, split)), makeLane(cards.slice(split)));
+    partners.dataset.globalMotion = 'ready';
+  }
 
-  const observer = new IntersectionObserver(([entry]) => {
-    if (!entry.isIntersecting) return;
-    section.classList.add('is-in-view');
-    observer.disconnect();
-  }, { threshold: 0.2 });
-  observer.observe(section.querySelector('.global-partners'));
+  function setPaused(paused) {
+    partners.dataset.paused = String(paused);
+    control.setAttribute('aria-pressed', String(paused));
+    control.title = paused ? 'Resume logo animation' : 'Pause logo animation';
+  }
+  control.setAttribute('aria-label', 'Pause logo animation');
+  control.addEventListener('click', () => setPaused(partners.dataset.paused !== 'true'));
+  setPaused(false);
+  applyMotionPreference();
+  motion.addEventListener('change', applyMotionPreference);
+
+  partners.dataset.offscreen = 'true';
+  const visibility = new IntersectionObserver(([entry]) => {
+    partners.dataset.offscreen = String(!entry.isIntersecting);
+    if (entry.isIntersecting) {
+      wall.querySelectorAll('img[loading="lazy"]').forEach(image => { image.loading = 'eager'; });
+    }
+  });
+  visibility.observe(partners);
 }
 
 setupGlobalPartners(document.querySelector('.global-section'));
