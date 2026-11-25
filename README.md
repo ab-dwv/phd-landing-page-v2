@@ -18,7 +18,7 @@ The supercomputing section pairs the full facility graphic with six research opp
 
 Beside the Sharda University logo, the supplied NBA, NAAC, and NIRF images rotate automatically every four seconds on a single sliding strip, moving to the right as the next logo enters from the left. A repeated NBA image makes the loop seamless. This header animation uses the same 184 × 57px space as the university logo, clips overflow, and has no scrollbar or visible controls. Image proportions are preserved. The header keeps rotating automatically even when reduced motion is enabled.
 
-Awards & Achievements shares its heading, introductory typography, and desktop section height with Global Tie-Ups. The rankings and accreditations appear in one panel, with the original NIRF, Times Engineering, NAAC, and NBA logos paired with their results. The backdrop uses a trophy photograph by Engin Akyurt, stored locally as `assets/awards-trophy-dark.jpg`. [Pexels](https://www.pexels.com/photo/standing-man-figurine-2098604/)
+Awards & Achievements displays eight individually editable cards in a slow, downward loop. The second set in `#award-track` repeats the original recognitions as placeholders. The supplied auditorium photograph is stored locally as `assets/awards-auditorium.jpg`.
 
 Content source: https://admissions.sharda.ac.in/phd/ (17 November 2026). The official page currently states that admissions are closed. Research figures and NAAC accreditation come from that page. Logo and favicon are downloaded from that page's image directory. Banner images were supplied by the user.
 

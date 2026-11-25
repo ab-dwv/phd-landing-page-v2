@@ -23,7 +23,8 @@ function setupNavigation(navigation) {
   }
 
   function updateHeaderHeight() {
-    document.documentElement.classList.toggle('header-compact', window.scrollY > 8);
+    // Collapse after the hero has scrolled behind the shorter header.
+    document.documentElement.classList.toggle('header-compact', window.scrollY >= 36);
   }
 
   updateCurrentLink();
@@ -170,6 +171,48 @@ function setupCampusUpdates(section) {
 
 setupCampusUpdates(document.querySelector('.campus-updates'));
 
+function setupAwardCarousel(carousel) {
+  if (!carousel) return;
+  const track = carousel.querySelector('.awards-grid');
+  const toggle = carousel.querySelector('.award-motion-toggle');
+  const pages = Array.from(track.children);
+  const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const repeats = pages.map(page => {
+    const copy = page.cloneNode(true);
+    copy.setAttribute('aria-hidden', 'true');
+    copy.inert = true;
+    return copy;
+  });
+
+  function resizeWindow() {
+    carousel.style.setProperty('--award-window', pages[0].getBoundingClientRect().height + 'px');
+  }
+
+  function applyMotionPreference() {
+    toggle.hidden = motion.matches;
+    carousel.classList.toggle('is-animated', !motion.matches);
+    if (motion.matches) {
+      repeats.forEach(page => page.remove());
+    } else {
+      track.append(...repeats);
+      resizeWindow();
+    }
+  }
+
+  toggle.addEventListener('click', () => {
+    const paused = carousel.classList.toggle('is-paused');
+    toggle.setAttribute('aria-label', paused ? 'Resume awards animation' : 'Pause awards animation');
+  });
+  new ResizeObserver(resizeWindow).observe(pages[0]);
+  new IntersectionObserver(([entry]) => {
+    carousel.classList.toggle('is-visible', entry.isIntersecting);
+  }).observe(carousel);
+  motion.addEventListener('change', applyMotionPreference);
+  applyMotionPreference();
+}
+
+setupAwardCarousel(document.querySelector('.award-carousel'));
+
 function setupGlobalPartners(section) {
   if (!section) return;
 
@@ -241,56 +284,82 @@ setupGlobalPartners(document.querySelector('.global-section'));
 function setupTestimonials(section) {
   if (!section) return;
 
-  const pages = Array.from(section.querySelectorAll('.testimonial-page'));
-  if (pages.length < 2) return;
+  const cardList = section.querySelector('.testimonial-cards');
+  const cards = Array.from(cardList.children);
+  if (cards.length < 2) return;
 
-  const previous = section.querySelector('.testimonial-previous');
-  const next = section.querySelector('.testimonial-next');
-  const pagination = section.querySelector('.testimonial-dots');
+  const controls = section.querySelector('.testimonial-controls');
+  const previous = controls.querySelector('.testimonial-previous');
+  const next = controls.querySelector('.testimonial-next');
+  const autoplay = controls.querySelector('.testimonial-autoplay');
+  const position = controls.querySelector('.testimonial-position');
   const status = section.querySelector('[data-testimonial-status]');
+  const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
   let current = 0;
+  let playing = !motion.matches;
+  let inView = false;
+  let hovering = false;
+  let timer;
 
-  const dots = pages.map((_, index) => {
-    const button = document.createElement('button');
-    button.type = 'button';
-    button.setAttribute('aria-label', `Testimonials, page ${index + 1} of ${pages.length}`);
-    button.setAttribute('aria-controls', 'testimonial-pages');
-    button.addEventListener('click', () => {
-      if (index !== current) showPage(index, index < current ? 'previous' : 'next');
-    });
-    pagination.append(button);
-    return button;
-  });
-
-  function showPage(index, direction) {
-    pages.forEach((page, position) => {
-      const selected = position === index;
-      page.hidden = !selected;
-      dots[position].setAttribute('aria-pressed', String(selected));
-    });
-    current = index;
-    if (direction) {
-      pages[index].dataset.direction = direction;
-      status.textContent = `Showing testimonials, page ${index + 1} of ${pages.length}.`;
+  function schedule() {
+    clearTimeout(timer);
+    if (playing && inView && !hovering && !document.hidden) {
+      timer = setTimeout(() => move(1, false), 9000);
     }
   }
 
-  function move(step) {
-    const index = (current + step + pages.length) % pages.length;
-    showPage(index, step < 0 ? 'previous' : 'next');
+  function setPlaying(enabled) {
+    playing = enabled;
+    autoplay.dataset.paused = String(!playing);
+    autoplay.setAttribute('aria-label', playing ? 'Pause testimonial autoplay' : 'Start testimonial autoplay');
+    schedule();
+  }
+
+  function move(step, announce = true) {
+    cards[current].inert = true;
+    delete cards[current].dataset.direction;
+    current = (current + step + cards.length) % cards.length;
+    const card = cards[current];
+    card.dataset.direction = step < 0 ? 'previous' : 'next';
+    card.inert = false;
+    position.textContent = (current + 1) + ' / ' + cards.length;
+    if (announce) {
+      const testimonial = card.querySelector('.testimonial-text').textContent;
+      status.textContent = 'Testimonial ' + (current + 1) + ' of ' + cards.length + '. ' + testimonial;
+    }
+    schedule();
   }
 
   previous.addEventListener('click', () => move(-1));
   next.addEventListener('click', () => move(1));
-  section.addEventListener('keydown', (event) => {
+  autoplay.addEventListener('click', () => setPlaying(!playing));
+  controls.addEventListener('focusin', event => {
+    if (event.target !== autoplay && event.target.matches(':focus-visible')) setPlaying(false);
+  });
+  controls.addEventListener('keydown', event => {
     if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
     event.preventDefault();
     move(event.key === 'ArrowLeft' ? -1 : 1);
   });
-  showPage(0);
-  previous.hidden = false;
-  next.hidden = false;
-  pagination.hidden = false;
+  cards.slice(1).forEach(card => { card.inert = true; });
+  cardList.classList.add('is-ready');
+  position.textContent = '1 / ' + cards.length;
+  controls.hidden = false;
+  cardList.addEventListener('pointerenter', event => {
+    hovering = event.pointerType !== 'touch';
+    schedule();
+  });
+  cardList.addEventListener('pointerleave', () => {
+    hovering = false;
+    schedule();
+  });
+  new IntersectionObserver(([entry]) => {
+    inView = entry.intersectionRatio >= 0.4;
+    schedule();
+  }, { threshold: 0.4 }).observe(cardList);
+  document.addEventListener('visibilitychange', schedule);
+  motion.addEventListener('change', () => setPlaying(!motion.matches));
+  setPlaying(playing);
 }
 
 setupTestimonials(document.querySelector('.testimonials'));

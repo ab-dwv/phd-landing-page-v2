@@ -474,54 +474,107 @@
     <section class="awards-section" id="awards" aria-labelledby="awards-title">
       <div class="awards-layout">
         <header class="awards-intro">
-          <h2 id="awards-title">Awards &amp;<br>Achievements</h2>
+          <h2 id="awards-title">Awards &amp;<br><span>Achievements</span></h2>
           <p>Sharda University’s national rankings and academic accreditations.</p>
         </header>
 
-        <div class="awards-grid">
-          <article class="award-card award-nirf">
-            <header class="award-card-heading">
-              <div class="award-logo">
-                <img src="assets/logo_nirf.webp" alt="" width="108" height="73" loading="lazy">
-              </div>
-              <h3>NIRF Ranking <span>2025</span></h3>
-            </header>
-            <p class="award-standing"><strong>87<sup>th</sup></strong><span>University category</span></p>
-          </article>
+        <div class="award-carousel">
+          <div class="awards-grid" id="award-track" role="region" aria-label="Awards and accreditations">
+            <div class="award-page" role="group" aria-label="Set 1 of 2">
+              <article class="award-card award-nirf">
+                <header class="award-card-heading">
+                  <div class="award-logo">
+                    <img src="assets/logo_nirf.webp" alt="" width="108" height="73" loading="lazy">
+                  </div>
+                  <h3>NIRF Ranking <span>2025</span></h3>
+                </header>
+                <p class="award-standing"><strong>87<sup>th</sup></strong><span>University category</span></p>
+              </article>
 
-          <article class="award-card award-times">
-            <header class="award-card-heading">
-              <div class="award-logo award-logo-wide">
-                <img src="assets/logo_times.webp" alt="Times Engineering" width="280" height="73" loading="lazy">
-              </div>
-              <h3>National Ranking <span>2024</span></h3>
-            </header>
-            <dl class="award-rankings">
-              <div><dt>Overall</dt><dd>14</dd></div>
-              <div><dt>Placement</dt><dd>12</dd></div>
-              <div><dt>Research</dt><dd>7</dd></div>
-            </dl>
-          </article>
+              <article class="award-card award-times">
+                <header class="award-card-heading">
+                  <div class="award-logo award-logo-wide">
+                    <img src="assets/logo_times.webp" alt="Times Engineering" width="280" height="73" loading="lazy">
+                  </div>
+                  <h3>National Ranking <span>2024</span></h3>
+                </header>
+                <dl class="award-rankings">
+                  <div><dt>Overall</dt><dd>14</dd></div>
+                  <div><dt>Placement</dt><dd>12</dd></div>
+                  <div><dt>Research</dt><dd>7</dd></div>
+                </dl>
+              </article>
 
-          <article class="award-card award-accreditation">
-            <div class="award-logo">
-              <img src="assets/logo_naac.webp" alt="" width="108" height="73" loading="lazy">
-            </div>
-            <div>
-              <h3>NAAC <strong>A+</strong></h3>
-              <p>Institutional accreditation</p>
-            </div>
-          </article>
+              <article class="award-card award-accreditation">
+                <header class="award-card-heading">
+                  <div class="award-logo">
+                    <img src="assets/logo_naac.webp" alt="" width="108" height="73" loading="lazy">
+                  </div>
+                  <h3>NAAC Accreditation</h3>
+                </header>
+                <p class="award-standing"><strong>A+</strong><span>Institutional accreditation</span></p>
+              </article>
 
-          <article class="award-card award-accreditation">
-            <div class="award-logo">
-              <img src="assets/logo_nba.webp" alt="" width="93" height="73" loading="lazy">
+              <article class="award-card award-accreditation">
+                <header class="award-card-heading">
+                  <div class="award-logo">
+                    <img src="assets/logo_nba.webp" alt="" width="93" height="73" loading="lazy">
+                  </div>
+                  <h3>NBA Accredited</h3>
+                </header>
+                <p class="award-scope">B.Tech (CSE, Civil, ME, Biotech, EEE, ECE), MBA and B.Pharm</p>
+              </article>
             </div>
-            <div>
-              <h3>NBA Accredited</h3>
-              <p>B.Tech (CSE, Civil, ME, Biotech, EEE, ECE), MBA and B.Pharm</p>
+
+            <!-- Placeholder recognitions. Replace these four articles independently. -->
+            <div class="award-page" role="group" aria-label="Set 2 of 2">
+              <article class="award-card award-nirf">
+                <header class="award-card-heading">
+                  <div class="award-logo">
+                    <img src="assets/logo_nirf.webp" alt="" width="108" height="73" loading="lazy">
+                  </div>
+                  <h3>NIRF Ranking <span>2025</span></h3>
+                </header>
+                <p class="award-standing"><strong>87<sup>th</sup></strong><span>University category</span></p>
+              </article>
+
+              <article class="award-card award-times">
+                <header class="award-card-heading">
+                  <div class="award-logo award-logo-wide">
+                    <img src="assets/logo_times.webp" alt="Times Engineering" width="280" height="73" loading="lazy">
+                  </div>
+                  <h3>National Ranking <span>2024</span></h3>
+                </header>
+                <dl class="award-rankings">
+                  <div><dt>Overall</dt><dd>14</dd></div>
+                  <div><dt>Placement</dt><dd>12</dd></div>
+                  <div><dt>Research</dt><dd>7</dd></div>
+                </dl>
+              </article>
+
+              <article class="award-card award-accreditation">
+                <header class="award-card-heading">
+                  <div class="award-logo">
+                    <img src="assets/logo_naac.webp" alt="" width="108" height="73" loading="lazy">
+                  </div>
+                  <h3>NAAC Accreditation</h3>
+                </header>
+                <p class="award-standing"><strong>A+</strong><span>Institutional accreditation</span></p>
+              </article>
+
+              <article class="award-card award-accreditation">
+                <header class="award-card-heading">
+                  <div class="award-logo">
+                    <img src="assets/logo_nba.webp" alt="" width="93" height="73" loading="lazy">
+                  </div>
+                  <h3>NBA Accredited</h3>
+                </header>
+                <p class="award-scope">B.Tech (CSE, Civil, ME, Biotech, EEE, ECE), MBA and B.Pharm</p>
+              </article>
             </div>
-          </article>
+          </div>
+
+          <button type="button" class="award-motion-toggle" aria-label="Pause awards animation" aria-controls="award-track" hidden></button>
         </div>
       </div>
     </section>
@@ -591,7 +644,7 @@
     <section class="global-section" id="global" aria-labelledby="global-title">
       <div class="global-inner">
         <div class="global-copy">
-          <h2 id="global-title"><span class="global-total">330<span>+</span></span> GLOBAL MoUs</h2>
+          <h2 id="global-title">330+ GLOBAL MoUs</h2>
           <p>Sharda University’s 330+ global MoUs with leading universities, research centres and industries provide joint research opportunities, faculty exchange, and access to specialised labs—connecting every scholar to a truly international knowledge network.</p>
         </div>
         <div class="global-partners">
@@ -649,75 +702,110 @@
     <section class="testimonials" id="testimonials" aria-labelledby="testimonials-title">
       <h2 class="testimonials-title" id="testimonials-title">Student Testimonials</h2>
       <div class="testimonials-carousel">
-        <button class="testimonial-arrow testimonial-previous" type="button" aria-label="Previous testimonials" aria-controls="testimonial-pages" hidden>
-          <svg aria-hidden="true"><use href="#arrow" /></svg>
-        </button>
+        <div class="testimonial-cards" id="testimonial-cards">
+          <article class="testimonial-card">
+            <div class="testimonial-photo"><svg aria-hidden="true"><use href="#user" /></svg></div>
+            <div class="testimonial-content">
+              <span class="testimonial-quote-mark" aria-hidden="true">“</span>
+              <p class="testimonial-text">A scholar could describe what drew them to their research topic, how their supervisor helped refine the question, and what they learned while planning their first study.</p>
+              <footer class="testimonial-byline">
+                <div>
+                  <h3>Scholar name</h3>
+                  <p class="testimonial-programme">Ph.D. programme</p>
+                </div>
+                <small>Sample testimonial</small>
+              </footer>
+            </div>
+          </article>
 
-        <div class="testimonial-pages" id="testimonial-pages">
-          <div class="testimonial-page">
-            <article class="testimonial-card">
-              <div class="testimonial-banner" aria-hidden="true"><span class="testimonial-quote-mark">“</span><span class="testimonial-stars">★★★★★</span></div>
-              <div class="testimonial-portrait" aria-hidden="true"><svg><use href="#user" /></svg></div>
-              <div class="testimonial-content">
-                <h3>Scholar name</h3>
-                <p class="testimonial-programme">Ph.D. programme</p>
-                <p class="testimonial-text">Sample testimonial. A scholar could describe what drew them to their research topic, how their supervisor helped refine the question, and what they learned while planning their first study.</p>
-              </div>
-            </article>
-            <article class="testimonial-card">
-              <div class="testimonial-banner" aria-hidden="true"><span class="testimonial-quote-mark">“</span><span class="testimonial-stars">★★★★★</span></div>
-              <div class="testimonial-portrait" aria-hidden="true"><svg><use href="#user" /></svg></div>
-              <div class="testimonial-content">
-                <h3>Scholar name</h3>
-                <p class="testimonial-programme">Ph.D. programme</p>
-                <p class="testimonial-text">Sample testimonial. A scholar could share how feedback from a research seminar changed their approach to data collection and gave them a clearer way to explain their findings.</p>
-              </div>
-            </article>
-            <article class="testimonial-card">
-              <div class="testimonial-banner" aria-hidden="true"><span class="testimonial-quote-mark">“</span><span class="testimonial-stars">★★★★★</span></div>
-              <div class="testimonial-portrait" aria-hidden="true"><svg><use href="#user" /></svg></div>
-              <div class="testimonial-content">
-                <h3>Scholar name</h3>
-                <p class="testimonial-programme">Ph.D. programme</p>
-                <p class="testimonial-text">Sample testimonial. A scholar could describe a challenge they faced in the lab or in the field, how they adapted their methods, and the advice they would give to someone starting similar research.</p>
-              </div>
-            </article>
-          </div>
-          <div class="testimonial-page">
-            <article class="testimonial-card">
-              <div class="testimonial-banner" aria-hidden="true"><span class="testimonial-quote-mark">“</span><span class="testimonial-stars">★★★★★</span></div>
-              <div class="testimonial-portrait" aria-hidden="true"><svg><use href="#user" /></svg></div>
-              <div class="testimonial-content">
-                <h3>Scholar name</h3>
-                <p class="testimonial-programme">Ph.D. programme</p>
-                <p class="testimonial-text">Sample testimonial. A scholar could reflect on the discipline it took to balance coursework and research, and the habits that helped them make steady progress on their thesis.</p>
-              </div>
-            </article>
-            <article class="testimonial-card">
-              <div class="testimonial-banner" aria-hidden="true"><span class="testimonial-quote-mark">“</span><span class="testimonial-stars">★★★★★</span></div>
-              <div class="testimonial-portrait" aria-hidden="true"><svg><use href="#user" /></svg></div>
-              <div class="testimonial-content">
-                <h3>Scholar name</h3>
-                <p class="testimonial-programme">Ph.D. programme</p>
-                <p class="testimonial-text">Sample testimonial. A scholar could share what it was like to present their work, which questions stayed with them, and how the discussion shaped the next phase of their research.</p>
-              </div>
-            </article>
-            <article class="testimonial-card">
-              <div class="testimonial-banner" aria-hidden="true"><span class="testimonial-quote-mark">“</span><span class="testimonial-stars">★★★★★</span></div>
-              <div class="testimonial-portrait" aria-hidden="true"><svg><use href="#user" /></svg></div>
-              <div class="testimonial-content">
-                <h3>Scholar name</h3>
-                <p class="testimonial-programme">Ph.D. programme</p>
-                <p class="testimonial-text">Sample testimonial. A scholar could explain how working with peers from another discipline helped them notice an assumption in their research and explore a different way to test it.</p>
-              </div>
-            </article>
-          </div>
+          <article class="testimonial-card">
+            <div class="testimonial-photo"><svg aria-hidden="true"><use href="#user" /></svg></div>
+            <div class="testimonial-content">
+              <span class="testimonial-quote-mark" aria-hidden="true">“</span>
+              <p class="testimonial-text">A scholar could share how feedback from a research seminar changed their approach to data collection and gave them a clearer way to explain their findings.</p>
+              <footer class="testimonial-byline">
+                <div>
+                  <h3>Scholar name</h3>
+                  <p class="testimonial-programme">Ph.D. programme</p>
+                </div>
+                <small>Sample testimonial</small>
+              </footer>
+            </div>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="testimonial-photo"><svg aria-hidden="true"><use href="#user" /></svg></div>
+            <div class="testimonial-content">
+              <span class="testimonial-quote-mark" aria-hidden="true">“</span>
+              <p class="testimonial-text">A scholar could describe a challenge they faced in the lab or in the field, how they adapted their methods, and the advice they would give to someone starting similar research.</p>
+              <footer class="testimonial-byline">
+                <div>
+                  <h3>Scholar name</h3>
+                  <p class="testimonial-programme">Ph.D. programme</p>
+                </div>
+                <small>Sample testimonial</small>
+              </footer>
+            </div>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="testimonial-photo"><svg aria-hidden="true"><use href="#user" /></svg></div>
+            <div class="testimonial-content">
+              <span class="testimonial-quote-mark" aria-hidden="true">“</span>
+              <p class="testimonial-text">A scholar could reflect on the discipline it took to balance coursework and research, and the habits that helped them make steady progress on their thesis.</p>
+              <footer class="testimonial-byline">
+                <div>
+                  <h3>Scholar name</h3>
+                  <p class="testimonial-programme">Ph.D. programme</p>
+                </div>
+                <small>Sample testimonial</small>
+              </footer>
+            </div>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="testimonial-photo"><svg aria-hidden="true"><use href="#user" /></svg></div>
+            <div class="testimonial-content">
+              <span class="testimonial-quote-mark" aria-hidden="true">“</span>
+              <p class="testimonial-text">A scholar could share what it was like to present their work, which questions stayed with them, and how the discussion shaped the next phase of their research.</p>
+              <footer class="testimonial-byline">
+                <div>
+                  <h3>Scholar name</h3>
+                  <p class="testimonial-programme">Ph.D. programme</p>
+                </div>
+                <small>Sample testimonial</small>
+              </footer>
+            </div>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="testimonial-photo"><svg aria-hidden="true"><use href="#user" /></svg></div>
+            <div class="testimonial-content">
+              <span class="testimonial-quote-mark" aria-hidden="true">“</span>
+              <p class="testimonial-text">A scholar could explain how working with peers from another discipline helped them notice an assumption in their research and explore a different way to test it.</p>
+              <footer class="testimonial-byline">
+                <div>
+                  <h3>Scholar name</h3>
+                  <p class="testimonial-programme">Ph.D. programme</p>
+                </div>
+                <small>Sample testimonial</small>
+              </footer>
+            </div>
+          </article>
         </div>
 
-        <button class="testimonial-arrow testimonial-next" type="button" aria-label="Next testimonials" aria-controls="testimonial-pages" hidden>
-          <svg aria-hidden="true"><use href="#arrow" /></svg>
-        </button>
-        <div class="testimonial-dots" role="group" aria-label="Testimonial pages" hidden></div>
+        <div class="testimonial-controls" role="group" aria-label="Testimonial navigation" hidden>
+          <button class="testimonial-arrow testimonial-previous" type="button" aria-label="Previous testimonial" aria-controls="testimonial-cards">
+            <svg aria-hidden="true"><use href="#arrow" /></svg>
+          </button>
+          <span class="testimonial-position" aria-hidden="true"></span>
+          <button class="testimonial-arrow testimonial-next" type="button" aria-label="Next testimonial" aria-controls="testimonial-cards">
+            <svg aria-hidden="true"><use href="#arrow" /></svg>
+          </button>
+          <button class="testimonial-arrow testimonial-autoplay" type="button" aria-label="Pause testimonial autoplay" aria-controls="testimonial-cards">
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path class="testimonial-pause-icon" d="M9 6v12m6-12v12"/><path class="testimonial-play-icon" d="m9 5 11 7-11 7z"/></svg>
+          </button>
+        </div>
         <p class="visually-hidden" role="status" data-testimonial-status></p>
       </div>
     </section>

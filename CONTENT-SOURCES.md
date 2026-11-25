@@ -18,8 +18,8 @@ The redesign uses Sharda's own published material. An older January 2026 “appl
 | Official downloadable brochures and fee booklets | https://www.sharda.ac.in/connect/brochure |
 | University brochure PDF, 89,615,558 bytes (approximately 85MiB) | https://www.sharda.ac.in/attachments/downloadcenter_files/CTB_2026-27.pdf |
 | University privacy policy | https://www.sharda.ac.in/privacy-policy |
-| Global Tie-Ups background (Trinity College Dublin’s Long Room) | [Low Angle Photography of Library, Ann Marie Kennon / Pexels](https://www.pexels.com/photo/low-angle-photography-of-library-1296000/) |
-| Awards & Achievements background | [Standing Man Figurine, Engin Akyurt / Pexels](https://www.pexels.com/photo/standing-man-figurine-2098604/) |
+| Global Tie-Ups background | Sharda University campus photograph supplied by the user (`8-2.jpg`) |
+| Awards & Achievements background | Auditorium photograph supplied by the user (`Image-1738048127111.jpg`) |
 
 ## Choices made for accuracy
 
