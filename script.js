@@ -36,24 +36,6 @@ function setupNavigation(navigation) {
 
 setupNavigation(document.querySelector('.navigation'));
 
-function showNotificationHighlights(section) {
-  if (!section) return;
-
-  const highlights = section.querySelector('.notification-highlights');
-  const template = highlights.querySelector('template');
-  const rows = section.querySelectorAll('[data-notification-icon]');
-  for (const row of rows) {
-    const card = template.content.cloneNode(true);
-    card.querySelector('.notification-highlight-label').textContent = row.cells[0].textContent;
-    card.querySelector('dd').textContent = row.querySelector('[data-notification-value]').textContent;
-    card.querySelector('use').setAttribute('href', `#${row.dataset.notificationIcon}`);
-    highlights.append(card);
-  }
-  highlights.hidden = rows.length === 0;
-}
-
-showNotificationHighlights(document.querySelector('.notification-section'));
-
 function setupResearchStatsCarousel(strip) {
   if (!strip) return;
 
@@ -134,7 +116,10 @@ const researchStats = document.querySelector('.research-stats');
 setupResearchStatsCarousel(researchStats);
 animateResearchStats(researchStats);
 
-const animatedSections = document.querySelectorAll('.welcome-copy, .welcome-photo, .welcome-facts, .why-visual, .why-benefits');
+const animatedSections = document.querySelectorAll(
+  '.welcome-copy, .welcome-photo, .welcome-facts, .why-visual, .why-benefits, ' +
+  '.research-domains-intro, .research-domains-grid > li, .testimonials-intro, .testimonials-carousel'
+);
 if (animatedSections.length) {
   const observer = new IntersectionObserver((entries) => {
     for (const entry of entries) {
