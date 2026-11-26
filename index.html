@@ -28,6 +28,13 @@
       <rect x="3" y="5" width="18" height="14" rx="1" />
       <path d="m3 6 9 7 9-7" />
     </symbol>
+    <symbol id="rupee" viewBox="0 0 24 24">
+      <path d="M6 4h12M6 9h12M8 4a5 5 0 0 1 0 10H6l9 6" />
+    </symbol>
+    <symbol id="calendar" viewBox="0 0 24 24">
+      <rect x="3" y="5" width="18" height="16" rx="2" />
+      <path d="M7 3v4m10-4v4M3 10h18" />
+    </symbol>
     <symbol id="laptop" viewBox="0 0 24 24">
       <path d="M4 17V6a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v11M3 17h18l-1 2H4z" />
     </symbol>
@@ -77,6 +84,34 @@
       <rect x="9" y="9" width="6" height="6" rx="1"/>
       <path d="M9 2v3m6-3v3M9 19v3m6-3v3M2 9h3m-3 6h3m14-6h3m-3 6h3"/>
     </symbol>
+    <symbol id="domain-ai" viewBox="0 0 24 24">
+      <rect x="9" y="9" width="6" height="6" rx="1" />
+      <path d="M12 6v3m0 6v3M6 12h3m6 0h3" />
+      <circle cx="12" cy="4" r="2" /><circle cx="12" cy="20" r="2" />
+      <circle cx="4" cy="12" r="2" /><circle cx="20" cy="12" r="2" />
+    </symbol>
+    <symbol id="domain-atom" viewBox="0 0 24 24">
+      <ellipse cx="12" cy="12" rx="4.5" ry="10" transform="rotate(45 12 12)" />
+      <ellipse cx="12" cy="12" rx="4.5" ry="10" transform="rotate(-45 12 12)" />
+      <circle cx="12" cy="12" r="1" />
+    </symbol>
+    <symbol id="domain-solar" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="4" />
+      <path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5" />
+    </symbol>
+    <symbol id="domain-sprout" viewBox="0 0 24 24">
+      <path d="M12 21v-8m0 2C6 15 3 12 3 7c5 0 9 2 9 8Zm0-2c0-6 4-9 9-9 0 5-3 9-9 9Z" />
+    </symbol>
+    <symbol id="domain-food" viewBox="0 0 24 24">
+      <path d="M3 12h18c0 4.5-4 8-9 8s-9-3.5-9-8Zm5 10h8M8 8c-1-1-1-2 0-3m4 3c-1-1-1-2 0-3m4 3c-1-1-1-2 0-3" />
+    </symbol>
+    <symbol id="domain-shield" viewBox="0 0 24 24">
+      <path d="m12 2 9 4c0 7-3.5 12.5-9 16-5.5-3.5-9-9-9-16zM8 12l2.5 2.5L16 9" />
+    </symbol>
+    <symbol id="domain-textiles" viewBox="0 0 24 24">
+      <rect x="3" y="3" width="18" height="18" rx="2" />
+      <path d="M3 9h18M3 15h18M9 3v6m0 6v6m6-18v6m0 6v6m-3-12v6" />
+    </symbol>
   </svg>
 
   <header class="site-header">
@@ -110,48 +145,22 @@
   </header>
 
   <main>
-    <section class="hero" id="hero" aria-label="Sharda University doctoral programmes">
+    <section class="hero" id="hero" aria-labelledby="hero-title">
       <div class="hero-stage">
-        <div class="hero-visual" id="hero-slides">
-          <div class="hero-banner">
-            <img class="banner" src="assets/banner2.webp"
-              alt="Researchers collaborating in a Sharda University laboratory" fetchpriority="high">
-            <div class="research-shade"></div>
-          </div>
-          <div class="hero-banner hero-banner-artwork" aria-hidden="true">
-            <img class="banner" src="assets/banner1.webp"
-              alt="Ph.D. Programmes 2026. July admissions open for full-time and part-time study.">
-          </div>
-          <div class="hero-banner hero-banner-artwork" aria-hidden="true">
-            <img class="banner" src="assets/banner3.webp"
-              alt="Sharda University graduate beside a Global Research Environment rankings graphic.">
-          </div>
+        <div class="hero-photo">
+          <img src="assets/hero-sharda-lab.webp" width="2069" height="993"
+            alt="Researcher working with a pipette in a laboratory" fetchpriority="high">
         </div>
         <div class="hero-copy">
-          <div class="hero-intro">
-            <h1 class="hero-title">
-              <span class="hero-title-degree">Ph.D.</span>
-              <span class="hero-title-programme">PROGRAMMES 2026</span>
-            </h1>
-            <p class="hero-subtitle">Admissions Open for July Batch</p>
-            <p class="hero-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, perferendis? Lorem ipsum dolor sit amet.</p>
-          </div>
+          <p class="hero-batch">July 2026 batch</p>
+          <h1 class="hero-title" id="hero-title">
+            <span>Ph.D.</span> Programmes
+          </h1>
+          <p class="hero-description">Explore full-time and part-time doctoral study across 25+ disciplines at Sharda University.</p>
           <div class="hero-actions">
-            <a class="action-button phone-button" href="tel:+911204570000" aria-label="Call Sharda University at +91 120 457 0000">
-              <svg aria-hidden="true"><use href="#phone" /></svg>
-              <span>Download Brochure</span>
-            </a>
-            <a class="action-button admissions-button" href="#applicant-name">Apply Now</a>
+            <a class="action-button hero-dates-link" href="#important">Important dates</a>
+            <a class="action-button hero-brochure-link" href="https://www.sharda.ac.in/connect/brochure">View brochure</a>
           </div>
-        </div>
-        <div class="hero-controls" role="group" aria-label="Banner slideshow" hidden>
-          <button class="hero-arrow hero-previous" type="button" aria-label="Previous slide" aria-controls="hero-slides">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 5-7 7 7 7" /></svg>
-          </button>
-          <button class="hero-arrow hero-next" type="button" aria-label="Next slide" aria-controls="hero-slides">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 5 7 7-7 7" /></svg>
-          </button>
-          <p class="visually-hidden" role="status" data-hero-status></p>
         </div>
       </div>
 
@@ -215,85 +224,124 @@
 
     <section class="research-stats-band" aria-label="Sharda University in numbers">
       <div class="research-stats">
-        <div class="stat stat-patents">
-          <div class="stat-heading">
-            <span class="stat-icon" aria-hidden="true"><svg><use href="#laptop" /></svg></span>
-            <strong><span data-count>912</span></strong>
+        <div class="research-stats-viewport" role="group" aria-label="Research statistics carousel" tabindex="0">
+          <div class="research-stats-track">
+            <ul class="research-stats-cards" role="list">
+              <li class="stat stat-patents">
+                <span class="stat-icon" aria-hidden="true"><svg><use href="#research-idea" /></svg></span>
+                <div class="stat-copy">
+                  <strong><span data-count>912</span></strong>
+                  <p>Patents Published and <span data-count>234</span> Granted</p>
+                </div>
+              </li>
+              <li class="stat stat-scholars">
+                <span class="stat-icon" aria-hidden="true"><svg><use href="#scholars" /></svg></span>
+                <div class="stat-copy">
+                  <strong><span data-count>1300</span>+</strong>
+                  <p>Research Scholars</p>
+                </div>
+              </li>
+              <li class="stat stat-papers">
+                <span class="stat-icon" aria-hidden="true"><svg><use href="#papers" /></svg></span>
+                <div class="stat-copy">
+                  <strong><span data-count>9315</span>+</strong>
+                  <p>Research Paper Published</p>
+                </div>
+              </li>
+              <li class="stat stat-projects">
+                <span class="stat-icon" aria-hidden="true"><svg><use href="#projects" /></svg></span>
+                <div class="stat-copy">
+                  <strong><span data-count>150</span>+</strong>
+                  <p>Major Funded Research Projects</p>
+                </div>
+              </li>
+
+              <!-- The four editable placeholder cards start here. -->
+              <li class="stat stat-patents">
+                <span class="stat-icon" aria-hidden="true"><svg><use href="#research-idea" /></svg></span>
+                <div class="stat-copy">
+                  <strong><span data-count>912</span></strong>
+                  <p>Patents Published and <span data-count>234</span> Granted</p>
+                </div>
+              </li>
+              <li class="stat stat-scholars">
+                <span class="stat-icon" aria-hidden="true"><svg><use href="#scholars" /></svg></span>
+                <div class="stat-copy">
+                  <strong><span data-count>1300</span>+</strong>
+                  <p>Research Scholars</p>
+                </div>
+              </li>
+              <li class="stat stat-papers">
+                <span class="stat-icon" aria-hidden="true"><svg><use href="#papers" /></svg></span>
+                <div class="stat-copy">
+                  <strong><span data-count>9315</span>+</strong>
+                  <p>Research Paper Published</p>
+                </div>
+              </li>
+              <li class="stat stat-projects">
+                <span class="stat-icon" aria-hidden="true"><svg><use href="#projects" /></svg></span>
+                <div class="stat-copy">
+                  <strong><span data-count>150</span>+</strong>
+                  <p>Major Funded Research Projects</p>
+                </div>
+              </li>
+            </ul>
           </div>
-          <p>Patents Published and <span data-count>234</span> Granted</p>
-        </div>
-        <div class="stat stat-scholars">
-          <div class="stat-heading">
-            <span class="stat-icon" aria-hidden="true"><svg><use href="#people" /></svg></span>
-            <strong><span data-count>1300</span>+</strong>
-          </div>
-          <p>Research Scholars</p>
-        </div>
-        <div class="stat stat-papers">
-          <div class="stat-heading">
-            <span class="stat-icon" aria-hidden="true"><svg><use href="#graduation-cap" /></svg></span>
-            <strong><span data-count>9315</span>+</strong>
-          </div>
-          <p>Research Paper Published</p>
-        </div>
-        <div class="stat stat-projects">
-          <div class="stat-heading">
-            <span class="stat-icon" aria-hidden="true"><svg><use href="#play-circle" /></svg></span>
-            <strong><span data-count>150</span>+</strong>
-          </div>
-          <p>Major Funded Research Projects</p>
         </div>
       </div>
     </section>
     <section class="notification-section" id="important" aria-labelledby="notification-title">
-      <div class="notification-heading">
-        <h2 id="notification-title">Important Notification</h2>
-        <span aria-hidden="true"></span>
-      </div>
+      <div class="notification-layout">
+        <header class="notification-heading">
+          <h2 id="notification-title">Important Notification</h2>
+        </header>
 
-      <div class="notification-grid">
+        <dl class="notification-highlights" aria-label="Application highlights" hidden>
+          <template>
+            <div class="notification-highlight">
+              <dt>
+                <span class="notification-highlight-icon" aria-hidden="true"><svg><use /></svg></span>
+                <span class="notification-highlight-label"></span>
+              </dt>
+              <dd></dd>
+            </div>
+          </template>
+        </dl>
+
         <div class="notification-details">
-          <div class="notification-table-wrap">
-            <table class="notification-table">
-              <caption>Ph.D. Programme and Details for Entrance Test (July 2026 Batch)</caption>
-              <tbody>
-                <tr>
-                  <th scope="row">Application Fee</th>
-                  <td>Rs. 1500/- (Rupees One Thousand Five Hundred Only)</td>
-                </tr>
-                <tr>
-                  <th scope="row">Last Date of Submission of Application</th>
-                  <td>30th June 2026 (Tuesday)</td>
-                </tr>
-                <tr>
-                  <th scope="row">Date of Entrance Test (Online)</th>
-                  <td>24th July 2026 (Friday)</td>
-                </tr>
-                <tr>
-                  <th scope="row">Date of Result Declaration of Entrance Test</th>
-                  <td>28th July 2026 (Tuesday)</td>
-                </tr>
-                <tr>
-                  <th scope="row">Date for Interview of Qualified Candidates (Online)</th>
-                  <td>03 to 07 August 2026 (Monday – Friday)</td>
-                </tr>
-                <tr>
-                  <th scope="row">Declaration of Final Result</th>
-                  <td>14th August 2026 (Friday)</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+          <table class="notification-table">
+            <caption>Ph.D. Programme and Details for Entrance Test (July 2026 Batch)</caption>
+            <tbody>
+              <tr data-notification-icon="rupee">
+                <th scope="row">Application Fee</th>
+                <td><span data-notification-value>Rs. 1500/-</span> (Rupees One Thousand Five Hundred Only)</td>
+              </tr>
+              <tr data-notification-icon="calendar">
+                <th scope="row">Last Date of Submission of Application</th>
+                <td><span data-notification-value>30th June 2026</span> (Tuesday)</td>
+              </tr>
+              <tr data-notification-icon="laptop">
+                <th scope="row">Date of Entrance Test (Online)</th>
+                <td><span data-notification-value>24th July 2026</span> (Friday)</td>
+              </tr>
+              <tr>
+                <th scope="row">Date of Result Declaration of Entrance Test</th>
+                <td>28th July 2026 (Tuesday)</td>
+              </tr>
+              <tr>
+                <th scope="row">Date for Interview of Qualified Candidates (Online)</th>
+                <td>03 to 07 August 2026 (Monday – Friday)</td>
+              </tr>
+              <tr>
+                <th scope="row">Declaration of Final Result</th>
+                <td>14th August 2026 (Friday)</td>
+              </tr>
+            </tbody>
+          </table>
 
           <div class="notification-copy">
             <p><strong>Admissions to Ph.D. programme (full-time and part-time) for batch July 2026</strong> of Sharda University will be made strictly according to the UGC guidelines for NET, GATE &amp; other equivalent test qualified candidates with valid score. The vacant seat shall be filled as per merit and availability of seats in various departments/ schools through Entrance Test followed by Interview. Ph.D. Ordinance of Sharda University, covered under comprehensive research policy available on its website, governs the Ph.D. Programme. Full-time eligible students may get <strong>Fellowship</strong> as per Sharda University rules.</p>
           </div>
-        </div>
-
-        <div class="notification-campus">
-          <figure class="campus-photo">
-            <img src="assets/sharda-campus.webp" alt="Aerial view of the Sharda University campus" width="800" height="659" loading="lazy">
-          </figure>
           <div class="notification-contact">
             <p>For Further Contact (9:00 AM - 5:00 PM) us:</p>
             <div class="notification-contact-links">
@@ -305,29 +353,30 @@
       </div>
     </section>
     <section class="welcome-section" id="welcome" aria-labelledby="welcome-title">
-      <div class="welcome-layout">
-        <div class="welcome-copy">
-          <h2 id="welcome-title">Welcome to<br>Sharda University</h2>
-          <span class="welcome-rule" aria-hidden="true"></span>
-          <p>Sharda University has over the years become one of the leading centres of education, research and innovation in Delhi NCR region. Established through an act of State Legislature of Uttar Pradesh (14 of 2009),</p>
-          <p><strong>Sharda University offers over 135+ programmes</strong> in various disciplines. It's a part of the renowned Sharda Group with operations in areas like Education, Healthcare and IT.</p>
-          <p>Being the only <strong>global university in India with students from 95+ countries</strong>, and academic partnerships with <strong>330+ Universities</strong> across the world-USA, UK, Italy, Canada, Russia, Slovenia, et al, the University offers a truly international learning environment.</p>
-          <div class="welcome-quote">
-            <span>That’s why it says,</span>
-            <blockquote>“The World is Here, Where are You?”</blockquote>
+      <div class="welcome-inner">
+        <div class="welcome-layout">
+          <div class="welcome-copy">
+            <h2 id="welcome-title">Welcome to <span>Sharda University</span></h2>
+            <p>Sharda University has over the years become one of the leading centres of education, research and innovation in Delhi NCR region. Established through an act of State Legislature of Uttar Pradesh (14 of 2009),</p>
+            <p><strong>Sharda University offers over 135+ programmes</strong> in various disciplines. It's a part of the renowned Sharda Group with operations in areas like Education, Healthcare and IT.</p>
+            <p>Being the only <strong>global university in India with students from 95+ countries</strong>, and academic partnerships with <strong>330+ Universities</strong> across the world-USA, UK, Italy, Canada, Russia, Slovenia, et al, the University offers a truly international learning environment.</p>
+            <div class="welcome-quote">
+              <span>That’s why it says,</span>
+              <blockquote>“The World is Here, Where are You?”</blockquote>
+            </div>
           </div>
-        </div>
 
-        <figure class="welcome-portrait">
-          <div class="welcome-image-frame">
-            <img src="assets/sharda-graduation.webp" alt="A Sharda University graduate receiving her degree at the convocation ceremony" width="832" height="1000" loading="lazy">
-          </div>
-        </figure>
+          <figure class="welcome-photo">
+            <div class="welcome-image-frame">
+              <img src="assets/sharda-campus.webp" alt="Aerial view of the Sharda University campus" width="800" height="659" loading="lazy">
+            </div>
+          </figure>
+        </div>
 
         <div class="welcome-facts">
           <h3 id="welcome-facts-title">Sharda University in numbers</h3>
           <dl class="welcome-numbers" aria-labelledby="welcome-facts-title">
-            <div class="welcome-metric welcome-metric-students">
+            <div class="welcome-metric">
               <dt>Students on campus</dt>
               <dd><span class="welcome-metric-icon" aria-hidden="true"><svg><use href="#scholars" /></svg></span><span class="welcome-metric-value">19,200<span>+</span></span></dd>
             </div>
@@ -351,7 +400,7 @@
               <dt>Functional MOUs</dt>
               <dd><span class="welcome-metric-icon" aria-hidden="true"><svg><use href="#partnership" /></svg></span><span class="welcome-metric-value">330<span>+</span></span></dd>
             </div>
-            <div class="welcome-metric welcome-metric-alumni">
+            <div class="welcome-metric">
               <dt>Alumni across the world</dt>
               <dd><span class="welcome-metric-icon" aria-hidden="true"><svg><use href="#globe" /></svg></span><span class="welcome-metric-value">34,000<span>+</span></span></dd>
             </div>
@@ -370,7 +419,7 @@
           </figure>
         </div>
 
-        <ul class="why-benefits">
+        <ul class="why-benefits" role="list">
           <li>
             <span class="why-icon" aria-hidden="true">
               <svg><use href="#papers" /></svg>
@@ -411,25 +460,17 @@
       </div>
     </section>
     <section class="compute-section" id="supercomputer" aria-labelledby="compute-title">
-      <div class="compute-intro">
+      <div class="compute-layout">
         <div class="compute-copy">
-          <header class="compute-header">
-            <p class="compute-eyebrow"><span aria-hidden="true"></span>NextGen research infrastructure</p>
-            <h2 id="compute-title">Supercomputing.<br><span>Built for discovery.</span></h2>
-            <p class="compute-lead">More power for ambitious ideas. Sharda University's NVIDIA DGX H100 supports research in artificial intelligence, machine learning and emerging technologies.</p>
-          </header>
-          <p class="compute-description">At the <strong>Sharda NextGen Cyber &amp; Quantum Systems Facility</strong>, researchers use the NVIDIA DGX H100 for AI model building, training and inference, alongside high-performance computing.</p>
-          <details class="compute-details">
-            <summary>
-              <span class="compute-details-symbol" aria-hidden="true"><svg><use href="#processor" /></svg></span>
-              <span class="compute-details-label"><span class="compute-details-closed">Inside the research facility</span><span class="compute-details-open">Close facility details</span><small>Explore how the computing power is used</small></span>
-              <span class="compute-details-toggle" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14" /><path class="compute-details-plus" d="M12 5v14" /></svg></span>
-            </summary>
+          <h2 id="compute-title">Supercomputing <span>at Sharda</span></h2>
+          <p class="compute-description">At the <strong>Sharda NextGen Cyber &amp; Quantum Systems Facility</strong>, researchers use an NVIDIA DGX H100 to build, train and run AI models and carry out high-performance computing research.</p>
+          <details class="compute-details" open>
+            <summary>Inside the research facility</summary>
             <div class="compute-details-body">
-              <h4>Beyond artificial intelligence</h4>
-              <p>High-performance computing supports molecular dynamics simulations for bioinformatics and drug discovery, along with quantum computing simulations.</p>
-              <h4>Computing for healthcare</h4>
-              <p>Data from Sharda University's two hospitals is used to develop AI models for diagnostic applications.</p>
+              <h3>Simulation and drug discovery</h3>
+              <p>Researchers use molecular dynamics simulations for bioinformatics and drug discovery. They also run quantum computing simulations.</p>
+              <h3>Computing for healthcare</h3>
+              <p>Researchers use data from Sharda University’s two hospitals to develop AI models for diagnosis.</p>
             </div>
           </details>
         </div>
@@ -437,208 +478,205 @@
           <img src="assets/sharda-dgx-h100.webp"
             alt="Sharda University's NVIDIA DGX H100 facility, showing the DGX system, Dell and Hexadata servers, KVM switch and fire suppression unit"
             width="686" height="1037" loading="lazy">
-          <figcaption><span>Inside Sharda's research facility</span><strong>NVIDIA DGX H100</strong><svg aria-hidden="true"><use href="#processor" /></svg></figcaption>
+          <figcaption>NVIDIA DGX H100 at Sharda University</figcaption>
         </figure>
-      </div>
 
-      <div class="compute-opportunities">
-        <h3 class="compute-opportunities-title">Research meets opportunity</h3>
-        <ul class="compute-benefits" aria-label="Research and learning opportunities">
-          <li>
-            <span class="compute-icon" aria-hidden="true"><svg><use href="#processor" /></svg></span>
-            <div><h4>Semiconductor research</h4><p>A future focus on research and development aligned with India's technology advances.</p></div>
-          </li>
-          <li>
-            <span class="compute-icon" aria-hidden="true"><svg><use href="#research-idea" /></svg></span>
-            <div><h4>Ideas into startups</h4><p>Support for AI-based ventures through Sharda Launchpad, the on-campus incubator.</p></div>
-          </li>
-          <li>
-            <span class="compute-icon" aria-hidden="true"><svg><use href="#briefcase" /></svg></span>
-            <div><h4>Industry connections</h4><p>A tie-up with Ultipa to explore internship and placement opportunities.</p></div>
-          </li>
-          <li>
-            <span class="compute-icon" aria-hidden="true"><svg><use href="#research-lab" /></svg></span>
-            <div><h4>AI across disciplines</h4><p>Technical and non-technical programmes, with research in AI, robotics and healthcare.</p></div>
-          </li>
-          <li>
-            <span class="compute-icon" aria-hidden="true"><svg><use href="#globe" /></svg></span>
-            <div><h4>Global collaboration</h4><p>Technology training tie-ups with the University of Maryland, USA, and Universidad Autónoma de Tamaulipas, Mexico.</p></div>
-          </li>
-          <li>
-            <span class="compute-icon" aria-hidden="true"><svg><use href="#scholars" /></svg></span>
-            <div><h4>Careers beyond campus</h4><p>Graduates placed at Citi Bank, Barclays, FedEx, Ernst &amp; Young, Tech Mahindra and more.</p></div>
-          </li>
-        </ul>
+        <div class="compute-opportunities">
+          <h3>Research meets opportunity</h3>
+          <ul class="compute-benefits" role="list">
+            <li>
+              <h4>Semiconductor research</h4>
+              <p>A planned area of research and development at Sharda.</p>
+            </li>
+            <li>
+              <h4>Startup support</h4>
+              <p>Sharda Launchpad, the on-campus incubator, supports AI startups.</p>
+            </li>
+            <li>
+              <h4>Industry connections</h4>
+              <p>Sharda works with Ultipa to explore internships and placements.</p>
+            </li>
+            <li>
+              <h4>AI across disciplines</h4>
+              <p>Technical and non-technical programmes include research in AI, robotics and healthcare.</p>
+            </li>
+            <li>
+              <h4>Global collaboration</h4>
+              <p>Technology training partnerships with the University of Maryland in the US and Universidad Autónoma de Tamaulipas in Mexico.</p>
+            </li>
+            <li>
+              <h4>Graduate careers</h4>
+              <p>Graduates have joined Citi Bank, Barclays, FedEx, Ernst &amp; Young and Tech Mahindra.</p>
+            </li>
+          </ul>
+        </div>
       </div>
     </section>
     <section class="awards-section" id="awards" aria-labelledby="awards-title">
       <div class="awards-layout">
         <header class="awards-intro">
-          <h2 id="awards-title">Awards &amp;<br><span>Achievements</span></h2>
+          <h2 id="awards-title">Awards &amp; <span>Achievements</span></h2>
           <p>Sharda University’s national rankings and academic accreditations.</p>
         </header>
 
-        <div class="award-carousel">
-          <div class="awards-grid" id="award-track" role="region" aria-label="Awards and accreditations">
-            <div class="award-page" role="group" aria-label="Set 1 of 2">
-              <article class="award-card award-nirf">
-                <header class="award-card-heading">
-                  <div class="award-logo">
-                    <img src="assets/logo_nirf.webp" alt="" width="108" height="73" loading="lazy">
-                  </div>
-                  <h3>NIRF Ranking <span>2025</span></h3>
-                </header>
-                <p class="award-standing"><strong>87<sup>th</sup></strong><span>University category</span></p>
-              </article>
-
-              <article class="award-card award-times">
-                <header class="award-card-heading">
-                  <div class="award-logo award-logo-wide">
-                    <img src="assets/logo_times.webp" alt="Times Engineering" width="280" height="73" loading="lazy">
-                  </div>
-                  <h3>National Ranking <span>2024</span></h3>
-                </header>
-                <dl class="award-rankings">
-                  <div><dt>Overall</dt><dd>14</dd></div>
-                  <div><dt>Placement</dt><dd>12</dd></div>
-                  <div><dt>Research</dt><dd>7</dd></div>
-                </dl>
-              </article>
-
-              <article class="award-card award-accreditation">
-                <header class="award-card-heading">
-                  <div class="award-logo">
-                    <img src="assets/logo_naac.webp" alt="" width="108" height="73" loading="lazy">
-                  </div>
-                  <h3>NAAC Accreditation</h3>
-                </header>
-                <p class="award-standing"><strong>A+</strong><span>Institutional accreditation</span></p>
-              </article>
-
-              <article class="award-card award-accreditation">
-                <header class="award-card-heading">
-                  <div class="award-logo">
-                    <img src="assets/logo_nba.webp" alt="" width="93" height="73" loading="lazy">
-                  </div>
-                  <h3>NBA Accredited</h3>
-                </header>
-                <p class="award-scope">B.Tech (CSE, Civil, ME, Biotech, EEE, ECE), MBA and B.Pharm</p>
-              </article>
+        <div class="awards-grid">
+          <article class="award-card">
+            <div class="award-logo">
+              <img src="assets/logo_nirf.webp" alt="" width="108" height="73" loading="lazy">
             </div>
+            <h3>NIRF Ranking <span>2025</span></h3>
+            <p class="award-standing"><strong>87<sup>th</sup></strong><span>University category</span></p>
+          </article>
 
-            <!-- Placeholder recognitions. Replace these four articles independently. -->
-            <div class="award-page" role="group" aria-label="Set 2 of 2">
-              <article class="award-card award-nirf">
-                <header class="award-card-heading">
-                  <div class="award-logo">
-                    <img src="assets/logo_nirf.webp" alt="" width="108" height="73" loading="lazy">
-                  </div>
-                  <h3>NIRF Ranking <span>2025</span></h3>
-                </header>
-                <p class="award-standing"><strong>87<sup>th</sup></strong><span>University category</span></p>
-              </article>
-
-              <article class="award-card award-times">
-                <header class="award-card-heading">
-                  <div class="award-logo award-logo-wide">
-                    <img src="assets/logo_times.webp" alt="Times Engineering" width="280" height="73" loading="lazy">
-                  </div>
-                  <h3>National Ranking <span>2024</span></h3>
-                </header>
-                <dl class="award-rankings">
-                  <div><dt>Overall</dt><dd>14</dd></div>
-                  <div><dt>Placement</dt><dd>12</dd></div>
-                  <div><dt>Research</dt><dd>7</dd></div>
-                </dl>
-              </article>
-
-              <article class="award-card award-accreditation">
-                <header class="award-card-heading">
-                  <div class="award-logo">
-                    <img src="assets/logo_naac.webp" alt="" width="108" height="73" loading="lazy">
-                  </div>
-                  <h3>NAAC Accreditation</h3>
-                </header>
-                <p class="award-standing"><strong>A+</strong><span>Institutional accreditation</span></p>
-              </article>
-
-              <article class="award-card award-accreditation">
-                <header class="award-card-heading">
-                  <div class="award-logo">
-                    <img src="assets/logo_nba.webp" alt="" width="93" height="73" loading="lazy">
-                  </div>
-                  <h3>NBA Accredited</h3>
-                </header>
-                <p class="award-scope">B.Tech (CSE, Civil, ME, Biotech, EEE, ECE), MBA and B.Pharm</p>
-              </article>
+          <article class="award-card award-times">
+            <div class="award-logo">
+              <img src="assets/logo_times.webp" alt="Times Engineering" width="280" height="73" loading="lazy">
             </div>
-          </div>
+            <h3>National Ranking <span>2024</span></h3>
+            <dl class="award-rankings">
+              <div><dt>Overall</dt><dd>14</dd></div>
+              <div><dt>Placement</dt><dd>12</dd></div>
+              <div><dt>Research</dt><dd>7</dd></div>
+            </dl>
+          </article>
 
-          <button type="button" class="award-motion-toggle" aria-label="Pause awards animation" aria-controls="award-track" hidden></button>
+          <article class="award-card">
+            <div class="award-logo">
+              <img src="assets/logo_naac.webp" alt="" width="108" height="73" loading="lazy">
+            </div>
+            <h3>NAAC Accreditation</h3>
+            <p class="award-standing"><strong>A+</strong><span>Institutional accreditation</span></p>
+          </article>
+
+          <article class="award-card">
+            <div class="award-logo">
+              <img src="assets/logo_nba.webp" alt="" width="93" height="73" loading="lazy">
+            </div>
+            <h3>NBA Accredited</h3>
+            <p class="award-scope">B.Tech (CSE, Civil, ME, Biotech, EEE, ECE), MBA and B.Pharm</p>
+          </article>
+
+          <!-- The second set repeats the existing recognitions as placeholders. -->
+          <article class="award-card">
+            <div class="award-logo">
+              <img src="assets/logo_nirf.webp" alt="" width="108" height="73" loading="lazy">
+            </div>
+            <h3>NIRF Ranking <span>2025</span></h3>
+            <p class="award-standing"><strong>87<sup>th</sup></strong><span>University category</span></p>
+          </article>
+
+          <article class="award-card award-times">
+            <div class="award-logo">
+              <img src="assets/logo_times.webp" alt="Times Engineering" width="280" height="73" loading="lazy">
+            </div>
+            <h3>National Ranking <span>2024</span></h3>
+            <dl class="award-rankings">
+              <div><dt>Overall</dt><dd>14</dd></div>
+              <div><dt>Placement</dt><dd>12</dd></div>
+              <div><dt>Research</dt><dd>7</dd></div>
+            </dl>
+          </article>
+
+          <article class="award-card">
+            <div class="award-logo">
+              <img src="assets/logo_naac.webp" alt="" width="108" height="73" loading="lazy">
+            </div>
+            <h3>NAAC Accreditation</h3>
+            <p class="award-standing"><strong>A+</strong><span>Institutional accreditation</span></p>
+          </article>
+
+          <article class="award-card">
+            <div class="award-logo">
+              <img src="assets/logo_nba.webp" alt="" width="93" height="73" loading="lazy">
+            </div>
+            <h3>NBA Accredited</h3>
+            <p class="award-scope">B.Tech (CSE, Civil, ME, Biotech, EEE, ECE), MBA and B.Pharm</p>
+          </article>
         </div>
       </div>
     </section>
-    <section class="campus-updates" id="whats-happening" aria-labelledby="updates-title">
-      <h2 class="updates-heading" id="updates-title">What’s Happening</h2>
+    <section class="research-domains" id="research-domains" aria-labelledby="research-domains-title">
+      <div class="research-domains-layout">
+        <header class="research-domains-intro">
+          <h2 id="research-domains-title">Research Across <span>Emerging Domains</span></h2>
+          <p>Sharda University’s research ecosystem supports interdisciplinary exploration across critical technologies, strategic sectors and innovation-led industries.</p>
+        </header>
 
-      <button class="updates-arrow updates-previous" type="button" aria-controls="campus-posts" aria-label="Previous events" hidden>
-        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m14 6-6 6 6 6" /></svg>
-      </button>
-
-      <div class="updates-viewport" id="campus-posts" tabindex="0" role="region" aria-label="Campus events" aria-live="polite">
-        <ul class="updates-pair" role="list">
+        <ul class="research-domains-grid" role="list">
           <li>
-            <div class="updates-photo" aria-hidden="true"></div>
-            <div class="updates-event">
-              <p>Careers</p>
-              <h3>Careers &amp; Industry Talk</h3>
+            <div class="research-domain-card">
+              <span class="research-domain-icon" aria-hidden="true"><svg><use href="#domain-ai" /></svg></span>
+              <div>
+                <h3>Artificial Intelligence</h3>
+                <p>Deep learning, machine learning, NLP and high-performance computing.</p>
+              </div>
             </div>
           </li>
           <li>
-            <div class="updates-photo" aria-hidden="true"></div>
-            <div class="updates-event">
-              <p>University life</p>
-              <h3>Convocation Ceremony</h3>
-            </div>
-          </li>
-        </ul>
-        <ul class="updates-pair" role="list">
-          <li>
-            <div class="updates-photo" aria-hidden="true"></div>
-            <div class="updates-event">
-              <p>Student life</p>
-              <h3>Freshers’ Welcome</h3>
+            <div class="research-domain-card">
+              <span class="research-domain-icon" aria-hidden="true"><svg><use href="#domain-atom" /></svg></span>
+              <div>
+                <h3>Nuclear Security</h3>
+                <p>Radiation detection, nuclear measurement and security research.</p>
+              </div>
             </div>
           </li>
           <li>
-            <div class="updates-photo" aria-hidden="true"></div>
-            <div class="updates-event">
-              <p>Doctoral research</p>
-              <h3>Scholar Research Spotlight</h3>
-            </div>
-          </li>
-        </ul>
-        <ul class="updates-pair" role="list">
-          <li>
-            <div class="updates-photo" aria-hidden="true"></div>
-            <div class="updates-event">
-              <p>Academic talks</p>
-              <h3>Visiting Scholar Lecture</h3>
+            <div class="research-domain-card">
+              <span class="research-domain-icon" aria-hidden="true"><svg><use href="#domain-solar" /></svg></span>
+              <div>
+                <h3>Renewable Energy</h3>
+                <p>Advanced research in clean energy and sustainable technologies.</p>
+              </div>
             </div>
           </li>
           <li>
-            <div class="updates-photo" aria-hidden="true"></div>
-            <div class="updates-event">
-              <p>Workshops</p>
-              <h3>Innovation Workshop</h3>
+            <div class="research-domain-card">
+              <span class="research-domain-icon" aria-hidden="true"><svg><use href="#domain-sprout" /></svg></span>
+              <div>
+                <h3>Agriculture</h3>
+                <p>Research supporting agricultural innovation and sustainable practices.</p>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="research-domain-card">
+              <span class="research-domain-icon" aria-hidden="true"><svg><use href="#processor" /></svg></span>
+              <div>
+                <h3>Semiconductors</h3>
+                <p>Explore materials, devices and next-generation semiconductor research.</p>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="research-domain-card">
+              <span class="research-domain-icon" aria-hidden="true"><svg><use href="#domain-food" /></svg></span>
+              <div>
+                <h3>Food Processing</h3>
+                <p>Explore research in food technologies, processing and value addition.</p>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="research-domain-card">
+              <span class="research-domain-icon" aria-hidden="true"><svg><use href="#domain-shield" /></svg></span>
+              <div>
+                <h3>Defence</h3>
+                <p>Research in defence technologies, systems and strategic applications.</p>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="research-domain-card">
+              <span class="research-domain-icon" aria-hidden="true"><svg><use href="#domain-textiles" /></svg></span>
+              <div>
+                <h3>Textiles</h3>
+                <p>Innovate in textile materials, technologies and applications.</p>
+              </div>
             </div>
           </li>
         </ul>
       </div>
-
-      <button class="updates-arrow updates-next" type="button" aria-controls="campus-posts" aria-label="Next events" hidden>
-        <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m10 6 6 6-6 6" /></svg>
-      </button>
     </section>
 
     <section class="global-section" id="global" aria-labelledby="global-title">

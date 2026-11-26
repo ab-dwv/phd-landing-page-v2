@@ -18,7 +18,7 @@ The redesign uses Sharda's own published material. An older January 2026 “appl
 | Official downloadable brochures and fee booklets | https://www.sharda.ac.in/connect/brochure |
 | University brochure PDF, 89,615,558 bytes (approximately 85MiB) | https://www.sharda.ac.in/attachments/downloadcenter_files/CTB_2026-27.pdf |
 | University privacy policy | https://www.sharda.ac.in/privacy-policy |
-| Global Tie-Ups background | Sharda University campus photograph supplied by the user (`8-2.jpg`) |
+| Global Tie-Ups background | 2482 × 1807 campus photograph from [Sharda University’s Executive MBA brochure, page 4](https://www.sharda.ac.in/attachments/downloadcenter_files/Executive_MBA_Flyer1.pdf#page=4) |
 | Awards & Achievements background | Auditorium photograph supplied by the user (`Image-1738048127111.jpg`) |
 
 ## Choices made for accuracy
