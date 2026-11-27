@@ -119,9 +119,12 @@ animateResearchStats(researchStats);
 setupLoopingCarousel(document.querySelector('.awards-carousel'), '.awards-track');
 
 const animatedSections = document.querySelectorAll(
-  '.notification-highlight, .notification-details > *, ' +
-  '.welcome-copy, .welcome-photo, .welcome-facts, .why-visual, .why-benefits, ' +
-  '.research-domains-intro, .research-domains-grid > li, .testimonials-intro, .testimonials-carousel'
+  '.hero-photo, .hero-copy > *, ' +
+  '.notification-highlights, .notification-highlight, .notification-details > *, ' +
+  '.welcome-copy, .welcome-photo, .welcome-facts, .why-title, .why-photo, .why-benefits > li, ' +
+  '.compute-copy > *, .compute-visual, .compute-opportunities > h3, .compute-benefits > li, ' +
+  '.awards-intro > *, .awards-carousel, .research-domains-intro, .research-domains-grid > li, ' +
+  '.global-copy > *, .life-heading, .life-gallery, .testimonials-intro, .testimonials-carousel, .site-footer-inner'
 );
 if (animatedSections.length) {
   const observer = new IntersectionObserver((entries) => {
@@ -201,6 +204,132 @@ function setupGlobalPartners(section) {
 }
 
 setupGlobalPartners(document.querySelector('.global-section'));
+
+function setupLifeGallery(section) {
+  if (!section) return;
+
+  const gallery = section.querySelector('.life-gallery');
+  const slides = Array.from(gallery.children, slide => {
+    const link = slide.querySelector('a');
+    return { slide, link, caption: link.querySelector('.life-photo-caption').textContent };
+  });
+  const dialog = section.querySelector('.life-lightbox');
+  const canOpenPhoto = typeof dialog.showModal === 'function';
+  const controls = section.querySelector('.life-controls');
+  const indicators = controls.querySelector('.life-indicators');
+  const autoplay = controls.querySelector('.life-autoplay');
+  const status = section.querySelector('[data-life-status]');
+  const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  let current = 0;
+  let playing = !motion.matches;
+  let inView = false;
+  let hovering = false;
+  let timer;
+
+  function schedule() {
+    clearTimeout(timer);
+    if (playing && inView && !hovering && !dialog.open && !document.hidden) {
+      timer = setTimeout(() => show(current + 1), 6000);
+    }
+  }
+
+  function setPlaying(enabled) {
+    playing = enabled;
+    autoplay.dataset.paused = String(!playing);
+    autoplay.setAttribute('aria-label', playing ? 'Pause photo autoplay' : 'Start photo autoplay');
+    schedule();
+  }
+
+  const dots = slides.map(({ caption }, index) => {
+    const dot = document.createElement('button');
+    dot.type = 'button';
+    dot.className = 'life-dot';
+    dot.setAttribute('aria-label', 'Show photo of ' + caption.toLowerCase());
+    dot.setAttribute('aria-controls', gallery.id);
+    dot.addEventListener('click', () => show(index, true));
+    indicators.append(dot);
+    return dot;
+  });
+
+  function show(index, announce = false) {
+    current = (index + slides.length) % slides.length;
+    const previous = (current - 1 + slides.length) % slides.length;
+    const next = (current + 1) % slides.length;
+    slides.forEach(({ slide, link, caption }, i) => {
+      const active = i === current;
+      const hidden = !active && i !== previous && i !== next;
+      slide.dataset.position = active ? 'center' : i === previous ? 'previous' : i === next ? 'next' : 'hidden';
+      slide.setAttribute('aria-hidden', String(hidden));
+      link.tabIndex = active ? 0 : -1;
+      link.setAttribute('aria-label', (active ? 'View photo of ' : 'Show photo of ') + caption.toLowerCase());
+      if (active && canOpenPhoto) link.setAttribute('aria-haspopup', 'dialog');
+      else link.removeAttribute('aria-haspopup');
+      if (active) dots[i].setAttribute('aria-current', 'true');
+      else dots[i].removeAttribute('aria-current');
+    });
+    if (announce) status.textContent = 'Photo ' + (current + 1) + ' of ' + slides.length + '. ' + slides[current].caption;
+    schedule();
+  }
+
+  gallery.addEventListener('click', event => {
+    const link = event.target.closest('.life-photo');
+    if (!link || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+
+    const index = slides.findIndex(slide => slide.link === link);
+    if (index !== current) {
+      event.preventDefault();
+      show(index, true);
+      return;
+    }
+    if (!canOpenPhoto) return;
+
+    event.preventDefault();
+    const photo = dialog.querySelector('img');
+    photo.src = link.href;
+    photo.alt = link.querySelector('img').alt;
+    dialog.querySelector('figcaption').textContent = slides[current].caption;
+    dialog.showModal();
+    schedule();
+  });
+  dialog.addEventListener('click', event => {
+    if (event.target === dialog) dialog.close();
+  });
+  dialog.addEventListener('close', schedule);
+  controls.querySelector('.life-previous').addEventListener('click', () => show(current - 1, true));
+  controls.querySelector('.life-next').addEventListener('click', () => show(current + 1, true));
+  autoplay.addEventListener('click', () => setPlaying(!playing));
+  section.addEventListener('focusin', event => {
+    if (event.target !== autoplay && event.target.matches(':focus-visible')) setPlaying(false);
+  });
+  controls.addEventListener('keydown', event => {
+    if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
+    event.preventDefault();
+    show(current + (event.key === 'ArrowLeft' ? -1 : 1), true);
+  });
+  gallery.addEventListener('pointerenter', event => {
+    hovering = event.pointerType !== 'touch';
+    schedule();
+  });
+  gallery.addEventListener('pointerleave', () => {
+    hovering = false;
+    schedule();
+  });
+  new IntersectionObserver(([entry]) => {
+    inView = entry.intersectionRatio >= .4;
+    schedule();
+  }, { threshold: .4 }).observe(gallery);
+  document.addEventListener('visibilitychange', schedule);
+  motion.addEventListener('change', () => {
+    if (motion.matches) setPlaying(false);
+  });
+
+  show(0);
+  gallery.dataset.carousel = 'ready';
+  controls.hidden = false;
+  setPlaying(playing);
+}
+
+setupLifeGallery(document.querySelector('.life-section'));
 
 function setupTestimonials(section) {
   if (!section) return;

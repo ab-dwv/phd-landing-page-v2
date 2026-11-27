@@ -425,13 +425,23 @@
     </section>
     <section class="why-section" id="whyy" aria-labelledby="why-title">
       <div class="why-layout">
-        <div class="why-visual">
-          <h2 id="why-title">Why Ph.D<br>at <span>Sharda</span></h2>
+        <h2 class="why-title" id="why-title"><span class="why-title-lead">Why Ph.D at</span> <span class="why-title-name">Sharda</span></h2>
+        <div class="why-gallery">
           <figure class="why-photo">
-            <img src="assets/sharda-research.webp"
-              alt="Sharda University researchers working together in a laboratory"
-              width="580" height="500" loading="lazy">
+            <img src="assets/sharda-welcome-graduates.jpg"
+              alt="Sharda University graduates toss their caps in front of the university banner"
+              width="600" height="400" loading="lazy" decoding="async">
           </figure>
+          <div class="why-photo-pair">
+            <figure class="why-photo">
+              <img src="assets/welcome1.avif" alt="Students holding folders outside a campus building"
+                width="600" height="450" loading="lazy" decoding="async">
+            </figure>
+            <figure class="why-photo">
+              <img src="assets/welcome3.jpg" alt="Graduates in gold stoles pose with guests at a ceremony"
+                width="447" height="447" loading="lazy" decoding="async">
+            </figure>
+          </div>
         </div>
 
         <ul class="why-benefits" role="list">
@@ -455,6 +465,12 @@
           </li>
           <li>
             <span class="why-icon" aria-hidden="true">
+              <svg><use href="#research-idea" /></svg>
+            </span>
+            <p>The faculty members/researchers have <strong>twelve patents</strong> pertaining to their innovative research work under their name.</p>
+          </li>
+          <li>
+            <span class="why-icon" aria-hidden="true">
               <svg><use href="#research-lab" /></svg>
             </span>
             <p><strong>12 Research lab</strong> and <strong>6 high-end research centres</strong></p>
@@ -464,12 +480,6 @@
               <svg><use href="#research-award" /></svg>
             </span>
             <p><strong>Education Excellence Award by ASSOCHAM</strong> supported by Ministry of Commerce, Govt. of India</p>
-          </li>
-          <li>
-            <span class="why-icon" aria-hidden="true">
-              <svg><use href="#research-idea" /></svg>
-            </span>
-            <p>The faculty members/researchers have <strong>twelve patents</strong> pertaining to their innovative research work under their name.</p>
           </li>
         </ul>
       </div>
@@ -795,6 +805,65 @@
           </button>
         </div>
       </div>
+    </section>
+    <section class="life-section" id="life-at-sharda" aria-labelledby="life-title">
+      <div class="life-layout">
+        <h2 id="life-title" class="life-heading">Life at <span>Sharda</span></h2>
+        <ul class="life-gallery" id="life-gallery" role="list">
+          <li>
+            <a class="life-photo" href="assets/life-at-sharda/campus-celebrations.webp" aria-label="View photo of campus celebrations">
+              <img src="assets/life-at-sharda/campus-celebrations.webp" alt="Students dancing and cheering together at an evening campus event" width="1600" height="1066" loading="lazy" decoding="async">
+              <span class="life-photo-caption">Campus celebrations</span>
+              <span class="life-photo-open" aria-hidden="true"><svg><use href="#arrow" /></svg></span>
+            </a>
+          </li>
+          <li>
+            <a class="life-photo life-photo-culture" href="assets/life-at-sharda/cultural-showcase.webp" aria-label="View photo of the cultural showcase">
+              <img src="assets/life-at-sharda/cultural-showcase.webp" alt="Dancers performing together on Sharda University's international community stage" width="1440" height="735" loading="lazy" decoding="async">
+              <span class="life-photo-caption">Cultural showcase</span>
+              <span class="life-photo-open" aria-hidden="true"><svg><use href="#arrow" /></svg></span>
+            </a>
+          </li>
+          <li>
+            <a class="life-photo life-photo-music" href="assets/life-at-sharda/live-music.webp" aria-label="View photo of live music">
+              <img src="assets/life-at-sharda/live-music.webp" alt="Singer performing on stage under red concert lights" width="1440" height="960" loading="lazy" decoding="async">
+              <span class="life-photo-caption">Live music</span>
+              <span class="life-photo-open" aria-hidden="true"><svg><use href="#arrow" /></svg></span>
+            </a>
+          </li>
+          <li>
+            <a class="life-photo life-photo-motorcycles" href="assets/life-at-sharda/motorcycle-showcase.webp" aria-label="View photo of the motorcycle showcase">
+              <img src="assets/life-at-sharda/motorcycle-showcase.webp" alt="A campus crowd watching two helmeted riders at a motorcycle showcase" width="1440" height="959" loading="lazy" decoding="async">
+              <span class="life-photo-caption">Motorcycle showcase</span>
+              <span class="life-photo-open" aria-hidden="true"><svg><use href="#arrow" /></svg></span>
+            </a>
+          </li>
+        </ul>
+        <div class="life-controls" role="group" aria-label="Campus photo navigation" hidden>
+          <button class="life-control life-previous" type="button" aria-label="Previous photo" aria-controls="life-gallery">
+            <svg aria-hidden="true"><use href="#arrow" /></svg>
+          </button>
+          <div class="life-indicators"></div>
+          <button class="life-control life-next" type="button" aria-label="Next photo" aria-controls="life-gallery">
+            <svg aria-hidden="true"><use href="#arrow" /></svg>
+          </button>
+          <button class="life-control life-autoplay" type="button" aria-label="Pause photo autoplay" aria-controls="life-gallery">
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path class="life-pause-icon" d="M9 6v12m6-12v12"/><path class="life-play-icon" d="m9 5 11 7-11 7z"/></svg>
+          </button>
+        </div>
+        <p class="visually-hidden" role="status" data-life-status></p>
+      </div>
+      <dialog class="life-lightbox" aria-labelledby="life-lightbox-caption">
+        <form method="dialog">
+          <button class="life-lightbox-close" type="submit" aria-label="Close photo" autofocus>
+            <svg aria-hidden="true" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18" /></svg>
+          </button>
+        </form>
+        <figure>
+          <img src="assets/life-at-sharda/campus-celebrations.webp" alt="" loading="lazy">
+          <figcaption id="life-lightbox-caption">Campus celebrations</figcaption>
+        </figure>
+      </dialog>
     </section>
     <section class="testimonials" id="testimonials" aria-labelledby="testimonials-title" aria-describedby="testimonials-note">
       <div class="testimonials-layout">
