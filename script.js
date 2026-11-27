@@ -36,10 +36,11 @@ function setupNavigation(navigation) {
 
 setupNavigation(document.querySelector('.navigation'));
 
-function setupResearchStatsCarousel(strip) {
+function setupLoopingCarousel(strip, trackSelector) {
   if (!strip) return;
 
-  const track = strip.querySelector('.research-stats-track');
+  const track = strip.querySelector(trackSelector);
+  if (!track?.firstElementChild) return;
   const cards = track.firstElementChild;
   const repeat = cards.cloneNode(true);
   repeat.setAttribute('aria-hidden', 'true');
@@ -113,8 +114,9 @@ function animateResearchStats(strip) {
 }
 
 const researchStats = document.querySelector('.research-stats');
-setupResearchStatsCarousel(researchStats);
+setupLoopingCarousel(researchStats, '.research-stats-track');
 animateResearchStats(researchStats);
+setupLoopingCarousel(document.querySelector('.awards-carousel'), '.awards-track');
 
 const animatedSections = document.querySelectorAll(
   '.welcome-copy, .welcome-photo, .welcome-facts, .why-visual, .why-benefits, ' +

@@ -34,3 +34,16 @@ The redesign uses Sharda's own published material. An older January 2026 “appl
 - No fabricated scholar testimonials, guaranteed placement percentages, response-time promises, live seat counts or application deadlines were introduced.
 
 Review these facts whenever the university issues a new intake notice. Deployment and admissions-system integration were not part of this design pass.
+
+## Research domain photographs
+
+| Card | Photo source |
+| --- | --- |
+| Artificial Intelligence | [Pleiades supercomputer](https://commons.wikimedia.org/wiki/File:Pleiades_supercomputer.jpg) |
+| Nuclear Security | [Handheld radiation detector](https://commons.wikimedia.org/wiki/File:Geiger_counter_dosimeter_measuring_radiation_(cropped).JPG) |
+| Renewable Energy | [Solar farm in Wisconsin](https://commons.wikimedia.org/wiki/File:Solar_farm_in_Wisconsin_01.jpg) |
+| Agriculture | [Crop rows](https://commons.wikimedia.org/wiki/File:Crop_rows_(Unsplash).jpg) |
+| Semiconductors | [Silicon wafer researcher](https://commons.wikimedia.org/wiki/File:Silicon_wafer_researcher.jpg) |
+| Food Processing | [Onion processing at Bland Farms](https://commons.wikimedia.org/wiki/File:Fruits_and_Vegetables_(20170620-OSEC-PJK-1536).jpg) |
+| Defence | [Radar antenna](https://commons.wikimedia.org/wiki/File:Radar_antenna.jpg) |
+| Textiles | [Textile weaving machine](https://commons.wikimedia.org/wiki/File:Weaving_machine_textile.jpg) |
