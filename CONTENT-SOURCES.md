@@ -31,7 +31,8 @@ The redesign uses Sharda's own published material. An older January 2026 “appl
 - The study-mode wording does not equate part-time with distance learning, and does not promise an attendance-free Ph.D. The next intake may change arrangements.
 - The three-year minimum is attributed to featured programme listings, not a guarantee of completion or a claim about every discipline.
 - NAAC describes institutional accreditation; NBA applies to selected professional programmes. The site does not imply blanket NBA accreditation of doctoral programmes.
-- No fabricated scholar testimonials, guaranteed placement percentages, response-time promises, live seat counts or application deadlines were introduced.
+- Four testimonial cards use user-supplied names and portraits with example reviews and ratings identified as fictional beside the section heading. Programme details and the other two cards are placeholders.
+- No guaranteed placement percentages, response-time promises, live seat counts or application deadlines were introduced.
 
 Review these facts whenever the university issues a new intake notice. Deployment and admissions-system integration were not part of this design pass.
 

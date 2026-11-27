@@ -119,6 +119,7 @@ animateResearchStats(researchStats);
 setupLoopingCarousel(document.querySelector('.awards-carousel'), '.awards-track');
 
 const animatedSections = document.querySelectorAll(
+  '.notification-highlight, .notification-details > *, ' +
   '.welcome-copy, .welcome-photo, .welcome-facts, .why-visual, .why-benefits, ' +
   '.research-domains-intro, .research-domains-grid > li, .testimonials-intro, .testimonials-carousel'
 );
@@ -244,8 +245,9 @@ function setupTestimonials(section) {
     card.inert = false;
     position.textContent = (current + 1) + ' / ' + cards.length;
     if (announce) {
+      const rating = card.querySelector('.testimonial-rating').getAttribute('aria-label');
       const testimonial = card.querySelector('.testimonial-text').textContent;
-      status.textContent = 'Testimonial ' + (current + 1) + ' of ' + cards.length + '. ' + testimonial;
+      status.textContent = 'Fictional example ' + (current + 1) + ' of ' + cards.length + '. ' + rating + '. ' + testimonial;
     }
     schedule();
   }
